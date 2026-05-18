@@ -45,6 +45,24 @@ Use a different source (default is Yahoo Finance):
 python main.py --source yahoo
 ```
 
+## Interactive Dashboard
+
+Launch the Streamlit web dashboard for real-time visualization and analysis:
+
+```bash
+streamlit run dashboard.py
+```
+
+The dashboard includes:
+- **Price & Indicators tab**: View stock prices, moving averages, RSI, and volatility
+- **Forecasts tab**: Compare naive and moving-average forecasts
+- **Data Export tab**: Download analyzed data as CSV
+
+Configure the analysis in the sidebar:
+- Select multiple stocks
+- Choose historical period (1 month to 2 years)
+- Set forecast horizon (1-30 days)
+
 ## Extending the project
 
 - Add new data providers in `data/`
