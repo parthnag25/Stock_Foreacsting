@@ -1,6 +1,6 @@
 # Stock Forecasting Project
 
-A simple Python project for downloading stock price data, running basic analysis, and generating lightweight forecasts.
+A simple Python project for downloading stock price data, running basic analysis, generating lightweight forecasts and my first github repository!
 
 ## Project Structure
 
