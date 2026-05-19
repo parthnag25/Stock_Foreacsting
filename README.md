@@ -46,7 +46,7 @@ python main.py --source yahoo
 ```
 
 ## Interactive Dashboard
-
+![Project Dashboard](newplot.png)
 Launch the Streamlit web dashboard for real-time visualization and analysis:
 
 ```bash
