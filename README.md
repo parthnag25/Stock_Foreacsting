@@ -1,18 +1,44 @@
 # Stock Forecasting Project
 
-A simple Python project for downloading stock price data, running basic analysis, generating lightweight forecasts and my first github repository!
+A polished demo of a Python stock analysis and forecasting tool with both a command-line workflow and an interactive Streamlit dashboard.
 
-## Project Structure
+![Project Dashboard](newplot.png)
 
-- `main.py` — entry point and workflow orchestration
-- `data/` — data retrieval and source definitions
-- `analysis/` — technical indicator calculations and visualization helpers
-- `models/` — forecasting and prediction utilities
-- `utils/` — configuration and file I/O helpers
+## 🚀 Project Showcase
 
-## Setup
+This repository demonstrates:
 
-1. Create a Python virtual environment:
+- Historical price retrieval for multiple stocks
+- Technical indicator computation (SMA, RSI, volatility)
+- Lightweight forecasting using naive and moving-average models
+- Streamlit dashboard for interactive data visualization and export
+- CSV export and reusable module structure for future extension
+
+## 🌟 Features
+
+- Fetch stock history for US symbols
+- Compute technical indicators:
+  - Simple moving averages (20 / 50)
+  - RSI (14)
+  - 20-day volatility
+- Generate forecasts:
+  - Naive forecast based on last close
+  - Moving average forecast
+- Interactive dashboard with Plotly charts and data export
+- Easy symbol selection, period control, and forecast horizon tuning
+
+## 📁 Project Structure
+
+- `main.py` — entry point and analysis workflow
+- `dashboard.py` — Streamlit app for visualization and export
+- `data/` — data retrieval and source management
+- `analysis/` — technical indicator and plotting helpers
+- `models/` — forecasting utilities
+- `utils/` — constants and file I/O helpers
+
+## ⚡ Quick Start
+
+1. Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
@@ -25,47 +51,64 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Run
-
-Fetch the default top 10 US stocks and run analysis:
+3. Run the command-line analysis for default stocks:
 
 ```bash
 python main.py
 ```
 
-Specify custom symbols:
-
-```bash
-python main.py --symbols AAPL MSFT TSLA
-```
-
-Use a different source (default is Yahoo Finance):
-
-```bash
-python main.py --source yahoo
-```
-
-## Interactive Dashboard
-![Project Dashboard](newplot.png)
-Launch the Streamlit web dashboard for real-time visualization and analysis:
+4. Open the interactive dashboard:
 
 ```bash
 streamlit run dashboard.py
 ```
 
-The dashboard includes:
-- **Price & Indicators tab**: View stock prices, moving averages, RSI, and volatility
-- **Forecasts tab**: Compare naive and moving-average forecasts
-- **Data Export tab**: Download analyzed data as CSV
+## 🛠️ Usage Examples
 
-Configure the analysis in the sidebar:
-- Select multiple stocks
-- Choose historical period (1 month to 2 years)
-- Set forecast horizon (1-30 days)
+Analyze specific symbols:
 
-## Extending the project
+```bash
+python main.py --symbols AAPL MSFT TSLA
+```
+
+Forecast the next 10 days:
+
+```bash
+python main.py --forecast-days 10
+```
+
+Save fetched data to CSV files:
+
+```bash
+python main.py --save-csv
+```
+
+## 📊 Dashboard Highlights
+
+The Streamlit dashboard includes:
+
+- **Price & Indicators** tab with closing price, SMA, and RSI charts
+- **Forecasts** tab comparing naive and moving-average forecasts
+- **Data Export** tab to download analyzed data as CSV
+
+## 📦 Requirements
+
+- Python 3.11+ recommended
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `yfinance`
+- `requests`
+- `streamlit`
+- `plotly`
+
+## 💡 Extend the Project
 
 - Add new data providers in `data/`
 - Add more indicators in `analysis/indicators.py`
-- Add machine learning models in `models/forecast.py`
-- Save dashboards or reports using `analysis/visualization.py`
+- Add advanced forecasting models in `models/forecast.py`
+- Expand the dashboard with additional analytics and metrics
+
+## 🔗 Notes
+
+Use `newplot.png` as a GitHub preview image for the dashboard section.
