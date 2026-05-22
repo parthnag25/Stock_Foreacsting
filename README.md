@@ -10,14 +10,20 @@ Investors and analysts need a fast way to understand stock momentum, risk, and s
 
 ## Live Demo
 
-This repository is ready to deploy on Streamlit Community Cloud. Once deployed, visitors can explore:
+Explore the deployed Streamlit dashboard here:
 
-- stock price history and moving averages
-- RSI and volatility metrics
-- forecast comparisons between naive and moving average models
-- downloadable CSV export of the analysis data
+[Open Live Dashboard](https://stockforecasting-hoppkkcmjrxsbqgh6erhmb.streamlit.app/)
 
-See `STREAMLIT_DEPLOYMENT.md` for deployment instructions.
+The app allows users to:
+- analyze historical stock price trends
+- compare 20-day and 50-day moving averages
+- review RSI and volatility indicators
+- generate simple baseline forecasts
+- export analyzed data as CSV
+
+## Dashboard Preview
+
+![Dashboard Preview](assets/dashboard_preview.png)
 
 ## Key Features
 
@@ -31,6 +37,17 @@ See `STREAMLIT_DEPLOYMENT.md` for deployment instructions.
   - moving-average forecast
 - Interactive Streamlit dashboard with charts, metrics, and export functionality
 - CSV export support for analyzed price data
+
+## Skills Demonstrated
+
+| Skill Area | Evidence in Project |
+|---|---|
+| Python Programming | Modular scripts for data loading, analysis, forecasting, and dashboarding |
+| Data Analytics | Historical stock price analysis, RSI, volatility, and moving averages |
+| Financial Analysis | Momentum indicators, risk metrics, and baseline forecast interpretation |
+| Dashboard Development | Interactive Streamlit interface with charts and CSV export |
+| Software Engineering | Organized folder structure, reusable functions, requirements file, and GitHub Actions CI |
+| Deployment | Public Streamlit app connected to GitHub repository |
 
 ## Tech Stack
 
@@ -55,14 +72,38 @@ See `STREAMLIT_DEPLOYMENT.md` for deployment instructions.
 - `tests/` — basic automated tests
 - `.github/workflows/` — CI automation
 
+## Project Architecture
+
+```text
+User Input
+   ↓
+Ticker Selection
+   ↓
+Historical Price Retrieval with yfinance
+   ↓
+Data Cleaning and Feature Engineering
+   ↓
+Technical Indicator Calculation
+   ↓
+Forecast Generation
+   ↓
+Streamlit Dashboard
+   ↓
+CSV Export
+```
+
 ## Results and Insights
 
-This project provides:
+The project demonstrates an end-to-end financial analytics workflow:
 
-- a clear signal of stock direction using moving averages
-- overbought/oversold RSI insights for momentum assessment
-- volatility measurement for risk awareness
-- a quick visual comparison of forecast scenarios
+- retrieved historical equity data using `yfinance`
+- computed moving-average trend indicators to identify short-term momentum
+- calculated RSI to flag potential overbought or oversold conditions
+- estimated rolling volatility to support basic risk assessment
+- generated baseline forecasts using naive and moving-average methods
+- delivered results through an interactive Streamlit dashboard with CSV export
+
+This project is not intended to provide investment advice. Its purpose is to demonstrate financial data engineering, analytics, forecasting logic, and dashboard deployment.
 
 ## Limitations
 
