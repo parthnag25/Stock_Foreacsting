@@ -1,49 +1,83 @@
 # Stock Forecasting Portfolio Project
 
-A portfolio-ready Python application that demonstrates data engineering, technical analysis, forecasting, and interactive visualization for equity markets.
+A portfolio-ready Python application that demonstrates stock analytics, technical indicators, forecasting, and interactive visualization using Streamlit.
 
 ![Project Dashboard](newplot.png)
 
-## 🎯 Why this project matters
+## Business Problem
 
-This repository was built as a portfolio showcase to demonstrate:
+Investors and analysts need a fast way to understand stock momentum, risk, and short-term outlooks using historical price data. This project solves that problem by combining data retrieval, technical analysis, and simple forecasting models into a single interactive dashboard.
 
-- end-to-end data collection and preprocessing for financial time series
-- implementation of trading analytics and risk indicators
-- simple forecasting model design and comparison
-- user-facing product delivery with an interactive Streamlit dashboard
-- modular code organization that is easy to extend and maintain
+## Live Demo
 
-## 🔥 Key Highlights
+This repository is ready to deploy on Streamlit Community Cloud. Once deployed, visitors can explore:
 
-- Historical price retrieval for multiple US stocks using `yfinance`
-- Technical indicators computed in reusable analysis functions:
-  - 20-day / 50-day moving averages
+- stock price history and moving averages
+- RSI and volatility metrics
+- forecast comparisons between naive and moving average models
+- downloadable CSV export of the analysis data
+
+See `STREAMLIT_DEPLOYMENT.md` for deployment instructions.
+
+## Key Features
+
+- Historical price retrieval for U.S. stocks using `yfinance`
+- Technical indicators:
+  - 20-day and 50-day moving averages
   - 14-day RSI
   - annualized 20-day volatility
-- Forecast generation via:
-  - naive persistence model
-  - moving average projection
-- Streamlit dashboard for data exploration, charting, and CSV export
-- Clean package structure that separates data, analysis, models, and utilities
+- Forecasting models:
+  - naive persistence forecast
+  - moving-average forecast
+- Interactive Streamlit dashboard with charts, metrics, and export functionality
+- CSV export support for analyzed price data
 
-## 🧠 Skills demonstrated
+## Tech Stack
 
-- Python data engineering with `pandas`
-- time series analysis and financial indicator development
-- visualization with Plotly and Streamlit
-- modular application design and reusable code
-- CLI development and dashboard deployment
-- version-controlled project structure for portfolio presentation
+- Python 3.11+
+- pandas
+- numpy
+- matplotlib
+- yfinance
+- streamlit
+- plotly
+- GitHub Actions for CI
 
-## 📚 Project Structure
+## Project Structure
 
 - `main.py` — command-line analysis workflow
-- `dashboard.py` — Streamlit visualization and export app
-- `data/` — price fetcher and source configuration
-- `analysis/` — indicator calculations and helper logic
-- `models/` — forecasting algorithms
-- `utils/` — constants and CSV export utilities
+- `dashboard.py` — Streamlit dashboard app
+- `data/` — historical price fetcher and source configuration
+- `analysis/` — technical indicator and visualization helpers
+- `models/` — forecasting algorithm implementations
+- `utils/` — constants and CSV file helpers
+- `assets/` — dashboard screenshots and architecture diagrams
+- `tests/` — basic automated tests
+- `.github/workflows/` — CI automation
+
+## Results and Insights
+
+This project provides:
+
+- a clear signal of stock direction using moving averages
+- overbought/oversold RSI insights for momentum assessment
+- volatility measurement for risk awareness
+- a quick visual comparison of forecast scenarios
+
+## Limitations
+
+- Forecasts are intentionally simple and not production-grade
+- Only one data source is fully supported (`yahoo`)
+- No backtesting or forecast validation metrics are currently included
+- Models do not account for macroeconomic factors or corporate events
+
+## Future Improvements
+
+- add more advanced forecasting models such as ARIMA or Prophet
+- implement backtesting and model performance metrics
+- support additional data sources beyond Yahoo Finance
+- add portfolio-level analytics and multi-stock comparison
+- include automated tests and GitHub Actions coverage reporting
 
 ## 🚀 Run the project
 
@@ -72,7 +106,7 @@ python main.py
 streamlit run dashboard.py
 ```
 
-## 💻 Example usage
+## Example usage
 
 Analyze specific stocks:
 
@@ -92,34 +126,14 @@ Export analyzed data:
 python main.py --save-csv
 ```
 
-## 📈 What the dashboard shows
+## What the dashboard shows
 
-- Price chart with overlaid SMA 20 and SMA 50
-- RSI indicator with overbought/oversold thresholds
-- Forecast comparison between naive and moving-average models
-- Downloadable CSV export of analyzed data
+- Price chart with SMA 20 and SMA 50
+- RSI trend and overbought/oversold thresholds
+- forecast visualization for naive and moving-average models
+- data export for downstream analysis
 
-## 🔧 Why this is portfolio-ready
-
-This project is designed to show both technical depth and product maturity:
-
-- clean modular architecture across packages
-- real-world data integration
-- hands-on analytics and visual storytelling
-- a polished interactive dashboard for non-technical audiences
-- clear project goals, usage instructions, and extension opportunities
-
-## 🚧 Future improvements
-
-Potential portfolio enhancements:
-
-- add backtesting and forecast validation metrics
-- include additional models such as ARIMA, Prophet, or LSTM
-- support multiple data sources beyond Yahoo Finance
-- add unit tests and CI automation
-- include more advanced dashboard insights like risk heatmaps or portfolio allocation
-
-## 📦 Requirements
+## Requirements
 
 - Python 3.11+
 - pandas
