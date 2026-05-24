@@ -18,8 +18,8 @@ The app allows users to:
 - analyze historical stock price trends
 - compare 20-day and 50-day moving averages
 - review RSI and volatility indicators
-- generate simple baseline forecasts
 - export analyzed data as CSV
+  
 
 ## Dashboard Preview
 
@@ -32,9 +32,7 @@ The app allows users to:
    - 20-day and 50-day moving averages
    - 14-day RSI
    - annualized 20-day volatility
-- Forecasting models:
-   - naive persistence forecast
-   - moving-average forecast
+* Forecasting functionality has been removed from this portfolio version.
 - Interactive Streamlit dashboard with charts, metrics, and export functionality
 - CSV export support for analyzed price data
 
@@ -66,7 +64,7 @@ The app allows users to:
 - `dashboard.py` — Streamlit dashboard app
 - `data/` — historical price fetcher and source configuration
 - `analysis/` — technical indicator and visualization helpers
-- `models/` — forecasting algorithm implementations
+ - `models/` — model helper utilities
 - `utils/` — constants and CSV file helpers
 - `assets/` — dashboard screenshots and architecture diagrams
 - `tests/` — basic automated tests

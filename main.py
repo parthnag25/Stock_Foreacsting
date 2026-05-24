@@ -7,7 +7,6 @@ import pandas as pd
 
 from data import fetch_multiple_symbols
 from analysis import add_technical_indicators, plot_price_and_sma
-from models import naive_forecast, moving_average_forecast
 from utils import TOP_US_STOCKS, DEFAULT_SOURCE, save_prices_to_csv
 
 
@@ -18,7 +17,6 @@ logger = logging.getLogger(__name__)
 def analyze_symbol(
     symbol: str,
     df: pd.DataFrame,
-    forecast_days: int = 5,
     save_folder: Optional[str] = None,
     plot: bool = False,
 ) -> pd.DataFrame:
@@ -28,10 +26,7 @@ def analyze_symbol(
     logger.info("Latest RSI: %0.2f", df["RSI_14"].iloc[-1])
     logger.info("20-day volatility: %0.4f", df["Volatility_20"].iloc[-1])
 
-    naive = naive_forecast(df, days=forecast_days)
-    ma = moving_average_forecast(df, window=5, days=forecast_days)
-    logger.info("Naive forecast (next %s days): %s", forecast_days, naive["Forecast"].tolist())
-    logger.info("Moving average forecast (next %s days): %s", forecast_days, ma["Forecast"].tolist())
+    # Forecasting removed in portfolio version
 
     if save_folder:
         saved_path = save_prices_to_csv(df, save_folder, symbol)
@@ -44,12 +39,11 @@ def analyze_symbol(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Simple stock forecasting project")
+    parser = argparse.ArgumentParser(description="Simple stock analytics project")
     parser.add_argument("--symbols", nargs="*", help="Stock symbols to analyze")
     parser.add_argument("--source", default=DEFAULT_SOURCE, help="Data source to use")
     parser.add_argument("--period", default="1y", help="History period to download")
     parser.add_argument("--interval", default="1d", help="Data interval")
-    parser.add_argument("--forecast-days", type=int, default=5, help="Days to forecast")
     parser.add_argument("--save-csv", action="store_true", help="Save fetched data to CSV files")
     parser.add_argument("--plot", action="store_true", help="Show a plot for each symbol")
     args = parser.parse_args()
