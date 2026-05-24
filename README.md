@@ -1,42 +1,8 @@
-# Stock Forecasting & Market Outlook Dashboard
+# Stock Forecasting Portfolio Project
 
-An interactive stock market analytics dashboard that combines historical equity trends, technical indicators, and future outlook estimates for stocks such as Apple, Microsoft, and Tesla.
+A portfolio-ready Python application that demonstrates stock analytics, technical indicators, forecasting, and interactive visualization using Streamlit.
 
 ![Project Dashboard](newplot.png)
-
-## Overview
-
-This project is an interactive stock market analytics dashboard built with Python, Streamlit, and yfinance. It allows users to analyze historical equity trends, technical indicators, volatility, and future price outlooks for stocks such as Apple, Microsoft, and Tesla.
-
-The dashboard generates forecasted prices, expected return percentages, directional movement, and model-based bullish, neutral, or bearish signals using baseline forecasting logic and technical indicators.
-
-## Project Objective
-
-The objective of this project is to build an interactive stock market analytics dashboard that analyzes historical equity trends and generates future price outlooks using Python, Streamlit, yfinance, and baseline forecasting models.
-
-The dashboard allows users to select stocks such as Apple, Microsoft, and Tesla, review technical indicators, estimate future price movement, and view a model-based bullish, neutral, or bearish signal. The project is designed for educational and analytical purposes and does not provide financial advice.
-
-## Forecast Summary
-
-| Output | Meaning |
-|---|---|
-| Current Price | Latest closing price |
-| Forecasted Price | Estimated future price |
-| Expected Change | Forecasted price minus current price |
-| Expected Return % | Estimated percentage increase/decrease |
-| Forecast Direction | Upward, Downward, or Flat |
-| Model-Based Signal | Bullish, Neutral, or Bearish |
-| Confidence Level | Low, Medium, or High |
-
-## Model-Based Signal Logic
-
-The dashboard generates a model-based signal using expected return, RSI, moving average trend, and volatility.
-
-- **Bullish**: Forecasted return is positive, RSI is below overbought levels, and short-term moving average is above the long-term moving average.
-- **Neutral**: Forecasted return is small or mixed with unclear trend indicators.
-- **Bearish**: Forecasted return is negative, RSI is overbought, or the short-term moving average is below the long-term moving average.
-
-This signal is not an investment recommendation. It is an analytical output based on model assumptions.
 
 ## Business Problem
 
@@ -63,13 +29,12 @@ The app allows users to:
 
 - Historical price retrieval for U.S. stocks using `yfinance`
 - Technical indicators:
-  - 20-day and 50-day moving averages
-  - 14-day RSI
-  - annualized 20-day volatility
+   - 20-day and 50-day moving averages
+   - 14-day RSI
+   - annualized 20-day volatility
 - Forecasting models:
-  - naive persistence forecast
-  - moving-average forecast
-  - outlook estimate with signal and confidence levels
+   - naive persistence forecast
+   - moving-average forecast
 - Interactive Streamlit dashboard with charts, metrics, and export functionality
 - CSV export support for analyzed price data
 
